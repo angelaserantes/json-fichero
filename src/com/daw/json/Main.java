@@ -17,18 +17,29 @@ public class Main {
         //Cadena json
         String json_original;
 
-        //Creamos un ArrayList de logros
-        ArrayList<String> logros = new ArrayList<>();
-        logros.add("tres copas de europa");
-        logros.add("una copa intercontinental");
-        logros.add("Campeón del mundo con la Selección Español");
+        //Creamos un ArrayList de JugadorBaloncesto
+        ArrayList<JugadorBaloncesto> jugadores = new ArrayList<>();
 
-        //Creamos nuestro objeto inicial
-        JugadorBaloncesto jugador_original = new JugadorBaloncesto("Rudy Fernandez", 38, "Real Madrid",logros);
-        System.out.println(jugador_original);
+        //Creamos un ArrayList de logros
+        ArrayList<String> logros1 = new ArrayList<>();
+        logros1.add("tres copas de europa");
+        logros1.add("una copa intercontinental");
+        logros1.add("Campeón del mundo con la Selección Española");
+
+        //Creamos primer jugador y lo añadimos a la lista jugadores
+        JugadorBaloncesto jugador1 = new JugadorBaloncesto("Rudy Fernandez", 38, "Real Madrid",logros1);
+        jugadores.add(jugador1);
+
+        //Creamos el segundo jugador y lo añadimos a la lista
+        ArrayList<String> logros2 = new ArrayList<>();
+        logros2.add("tres copas de europa");
+        logros2.add("Campeón del mundo con la Selección Española");
+        logros2.add("7 títulos ACB");
+        JugadorBaloncesto jugador2 = new JugadorBaloncesto("Sergio Llull", 35, "Real Madrid", logros2);
+        jugadores.add(jugador2);
 
         //Lo pasamos a json
-        json_original = gson.toJson(jugador_original, JugadorBaloncesto.class);
+        json_original = gson.toJson(jugadores);
         System.out.println(json_original);
 
         //Creamos un fichero y guardamos el JSON
